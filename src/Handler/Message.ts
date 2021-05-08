@@ -124,6 +124,7 @@ export class Message {
                 case 'help':
                     this.client.reply(from, { body: help(this.client, slicedJoinedArgs.toLowerCase().trim()) }, M)
                     break
+
                 case 'sticker':
                     const sticker = !media
                         ? { body: responses['wrong-format-media'] }
@@ -342,6 +343,10 @@ export class Message {
             case 'hey':
                 body = 'Hi there!'
                 log = true
+                break
+            case 'i love you':
+                body = 'Love you too'
+                log = false
                 break
             case 'test':
                 body = 'Well...'
